@@ -4,18 +4,18 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp);
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdshow){
 	
-	WNDCLASSW wc = {};
+	WNDCLASS wc = {};
 	
-	wc.lpszClassName = L"My Window Class";
+	wc.lpszClassName = "My Window Class";
 	wc.hbrBackground = (HBRUSH)COLOR_WINDOW;
 	wc.lpfnWndProc = WindowProcedure;
 	wc.hInstance = hInst;
 	
-	RegisterClassW(&wc);
+	RegisterClass(&wc);
 	
-	CreateWindowW(
+	CreateWindow(
 		wc.lpszClassName,
-		L"My GUI App",
+		"My GUI App",
 		WS_OVERLAPPEDWINDOW | WS_VISIBLE,
 		0, 0, 800, 600,
 		NULL, NULL, NULL, NULL
@@ -41,5 +41,5 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp){
 			return 0;
 			
 	}
-	return DefWindowProcW(hWnd, msg, wp, lp);
+	return DefWindowProc(hWnd, msg, wp, lp);
 }
