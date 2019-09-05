@@ -62,7 +62,6 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp){
           char editText[100];
           GetWindowText(hEdit, editText, 100);
           MessageBox(NULL, editText, "Message", MB_OK);
-          break;
       }
       break;
 
@@ -108,7 +107,7 @@ void addElements(HWND hWnd){
     NULL, NULL, NULL
   );
 
-	CreateWindow(
+  CreateWindow(
     "Button",
     "Clique aqui",
     WS_VISIBLE | WS_CHILD,
